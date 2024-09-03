@@ -1,0 +1,33 @@
+h1{
+    text-align: center;
+    background-color: #e8cba5;
+}
+
+.content {
+    display: flex;
+}
+
+.row{
+    display: flex;
+    padding: 10px;
+    background-color: #ddcab0;
+}
+
+.column{
+   
+    padding: 40px;
+}
+
+img{
+    height: 225px;
+    width: 186px;
+    border: 3px solid rgb(79, 48, 48);
+
+}
+
+figcaption{
+    background-color: #373333;
+    font-family: sans-serif;
+    color: white;
+    padding: 1px;
+}
