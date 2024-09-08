@@ -53,6 +53,12 @@ section.products {
     max-width: 100%;
     border-radius: 10px;
     margin-bottom: 1rem;
+    transition: transform 2.5s; /* Smooth transition for 3D flip */
+    transform-style: preserve-3d; /* Enables 3D space */
+}
+
+.product-card:hover img {
+    transform: rotateY(360deg); /* Full 360 degree horizontal flip */
 }
 
 .product-card h2 {
@@ -94,3 +100,4 @@ footer {
         transform: translateY(0);
     }
 }
+
