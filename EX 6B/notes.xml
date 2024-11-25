@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notes>
+    <note>
+        <title>Note 1</title>
+        <content>Remember to buy groceries.</content>
+        <timestamp>2024-11-25 09:00</timestamp>
+    </note>
+    <note>
+        <title>Note 2</title>
+        <content>Complete the PHP assignment.</content>
+        <timestamp>2024-11-25 10:00</timestamp>
+    </note>
+    <note>
+        <title>Note 3</title>
+        <content>Plan for tomorrow's meeting.</content>
+        <timestamp>2024-11-25 11:00</timestamp>
+    </note>
+</notes>
