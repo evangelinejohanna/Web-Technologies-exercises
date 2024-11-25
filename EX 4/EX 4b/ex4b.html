@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notefy - Note Taking App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        text-align: center;
+        background-color: #f4f4f4;
+      }
+
+      h1 {
+        color: #006377;
+      }
+
+      .time-display {
+        margin-bottom: 20px;
+      }
+
+      .time-display input {
+        padding: 10px;
+        font-size: 18px;
+        width: 150px;
+        text-align: center;
+        border: 2px solid #006377;
+        border-radius: 5px;
+      }
+
+      .note-form {
+        margin-bottom: 20px;
+      }
+
+      .note-form input,
+      .note-form textarea,
+      .note-form button {
+        display: block;
+        margin: 10px auto;
+        padding: 10px;
+        font-size: 16px;
+        width: 80%;
+        max-width: 400px;
+        border: 2px solid #006377;
+        border-radius: 5px;
+      }
+
+      .hover-area {
+        border: 2px dashed #006377;
+        padding: 20px;
+        margin: 20px auto;
+        width: 80%;
+        max-width: 400px;
+      }
+
+      .hover-area p {
+        font-size: 18px;
+        color: #333;
+      }
+
+      .hover-area:hover {
+        background-color: #e0f7fa;
+        cursor: pointer;
+      }
+
+      .image-hover img {
+        width: 200px;
+        border: 2px solid #006377;
+        border-radius: 10px;
+        margin: 10px;
+      }
+
+      .notification {
+        margin-top: 20px;
+        font-weight: bold;
+        color: #006377;
+      }
+    </style>
+    <script>
+      // Display real-time clock
+      function displayTime() {
+        const now = new Date();
+        const timeFormat =
+          now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+        document.getElementById("current-time").value = timeFormat;
+      }
+      setInterval(displayTime, 1000);
+
+      // Validate note form
+      function validateNoteForm(event) {
+        event.preventDefault();
+        const title = document.noteForm.title.value.trim();
+        const content = document.noteForm.content.value.trim();
+
+        if (!title) {
+          alert("Please enter a note title.");
+          return false;
+        }
+
+        if (!content) {
+          alert("Please enter note content.");
+          return false;
+        }
+
+        alert("Note added successfully!");
+        return true;
+      }
+
+      // Show hover text
+      function showHoverText() {
+        document.getElementById("hover-text").innerText =
+          "You are in the note zone!";
+      }
+
+      function hideHoverText() {
+        document.getElementById("hover-text").innerText =
+          "Hover here to enter note zone!";
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Welcome to Notefy</h1>
+
+    <!-- Display current time -->
+    <div class="time-display">
+      <h2>Current Time</h2>
+      <input type="text" id="current-time" readonly />
+    </div>
+
+    <!-- Note-taking form -->
+    <form name="noteForm" class="note-form" onsubmit="validateNoteForm(event)">
+      <h2>Add a Note</h2>
+      <input type="text" name="title" placeholder="Enter note title" />
+      <textarea
+        name="content"
+        placeholder="Enter note content"
+        rows="5"
+      ></textarea>
+      <button type="submit">Add Note</button>
+    </form>
+
+    <!-- Hover effect area -->
+    <div
+      class="hover-area"
+      onmouseover="showHoverText()"
+      onmouseout="hideHoverText()"
+    >
+      <p id="hover-text">Hover here to enter note zone!</p>
+    </div>
+
+    <!-- Image hover with text -->
+    <div class="image-hover">
+      <h2>Hover Over the Image</h2>
+      <img
+        src="C:\Users\Evangeline Johanna\OneDrive\Documents\Web Tech Lab\EX 4\EX 4b\assets\image-note.jpg"
+        onmouseover="document.getElementById('hover-image-text').innerText = 'Take notes like a pro!'"
+        onmouseout="document.getElementById('hover-image-text').innerText = ''"
+      />
+      <p id="hover-image-text"></p>
+    </div>
+  </body>
+</html>
